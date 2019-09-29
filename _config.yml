@@ -1,0 +1,120 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 美林湖畔 # 博客名字
+subtitle:
+description:  coding in my life # 博客摘要
+keywords: Shirley的个人站，博客主要涉及前端知识、工具使用、前沿技术、问题解决的方面知识,javascripy/php/ajax/vue/react # 关键字
+author: Shirley Lin # 作者
+language: zh-CN # 语言设置
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://meilinhu.cc
+root: /
+permalink: :year/:month/:day/:title/ # 文件默认存储位置
+permalink_defaults:
+
+# Directory 目录
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts 新文件的名字
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true # 图片上传功能 true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: nextnew # 主题名字
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo:
+    github: https://github.com/shirley3790/shirley3790.github.io.git # 提交仓库路径
+  branch: master
+
+# live2d:
+#   enable: true
+#   pluginModelPath: assets/
+#   model:
+#     use: live2d-widget-model-hijiki  #模板目录，在node_modules里
+#   display:
+#     position: left
+#     width: 200 
+#     height: 400
+#     hOffset: 0
+#     vOffset: -40
+#   mobile:
+#     show: false  #是否在手机进行显示
+#     react:
+#     opacity: 0.7
+
+live2d:
+  enable: true
+  pluginModelPath: assets/
+  model:
+    use: live2d-widget-model-hijiki  #模板目录，在node_modules里
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
+  display:
+    superSample: 2
+    width: 200
+    height: 400
+    position: left
+    hOffset: 0
+    vOffset: -120
+  mobile:
+    show: false
+  react:
+    opacity: 0.7

@@ -161,28 +161,19 @@ h5全称html5,不是单纯的html的第5个版本，而是一项最新的web标�
   - 不能使用关键字或保留字
 
     - 关键字：这些单词在计算机中有特殊的含义，就不能用这些单词来作为变量名、参数名和函数名。
-
-
     - 保留字：有些单词，在js中准备用于扩展使用，备用单词也不允许作为变量名、参数名和函数名。
 
-    
+| break    | do       | instanceof | typeof  |
+| -------- | -------- | ---------- | ------- |
+| case     | else     | new        | var     |
+| catch    | finally  | return     | void    |
+| continue | for      | switch     | while   |
+| debugger | function | this       | with    |
+| default  | if       | try        | delete  |
+| throw    | in       | class      | extends |
+| const    | let      | export     | import  |
 
-    | 部分关键字保留字 |          |            |         |
-    | ---------------- | -------- | ---------- | ------- |
-    | break            | do       | instanceof | typeof  |
-    | case             | else     | new        | var     |
-    | catch            | finally  | return     | void    |
-    | continue         | for      | switch     | while   |
-    | debugger         | function | this       | with    |
-    | default          | if       | try        | delete  |
-    | throw            | in       | class      | extends |
-    | const            | let      | export     | import  |
-
-    
-
-     关键字保留字参考：<https://www.runoob.com/js/js-reserved.html> 
-
-    
+> 关键字保留字参考：<https://www.runoob.com/js/js-reserved.html> 
 
 - 代码可读性
   - 标识符区分大小写，如：age和Age是不同的变量。但强烈不建议用同一个单词的大小写区分两个变量。
@@ -538,14 +529,44 @@ typeof null //=>object
 
 ###### 案例：一个引号引发的公司倒闭
 
-##### 运算符--逻辑运算符
+```
+/*
+        一个引号引发的公司倒闭
+
+        知识点：打印数据
+            * 弹窗类：都会阻塞代码的执行，所以要少用
+                * alert() 弹窗
+                * confirm() 能够确定和取消
+                * prompt() 接收前端的数据
+            * document.write(all); 打印内容到页面
+            * 打印到控制台：console.log()
+    */
+    var jingjing = '20000';
+    var laoxie = '1999';
+    var linjie = 2999;
+    var laoyao = 999;
+    var yongge = '3999';
+    var all = jingjing + laoxie + linjie + laoyao + yongge;//拼接功能
+    console.log(all);
+    document.write(all);
+
+    var res = confirm('你帅吗？');
+    console.log(res);
+
+    var con = prompt('你今年多大？');
+    console.log(con);
+```
+
+##### 运算符--逻辑运算符（返回布尔值）
 
 ------
 
 - &&: 逻辑与 （这里注意：与的优先级比或要高）
-
+  - 特性一：两边为真才为真
+  - 特性二：左边为假，不再运行右侧
 - ||：逻辑或
-
+  - 特性一：两边为假才为假
+  - 特性二：左边为真，不再运行右侧
 - !: 逻辑非 （取反，用于做开关）
 
 ```
@@ -646,6 +667,37 @@ js代码实现：开关的应用
 </script>
 ```
 
+##### 运算符--关系运算符（返回布尔值）
+
+------
+
+
+
+- ==(等于), !=(不等于)
+- <(小于)、>(大于)、<=(小于等于)、>=(大于等于)
+- ===、恒等于/全等于，比较的时候要求值和类型都相等（不会进行类型隐式转换）
+- !==、不全等于
+- 关系运算符的比较规则: 
+  \1. 数字和数字比较, 直接比较大小
+  \2. 数字和字符串比较, 字符串转换为数字后再比较
+  \3. 字符串和字符串比较, 进行字符的ASCII码值比较
+
+```
+/*
+        关系运算符的比较规则: 
+        1. 数字和数字比较, 直接比较大小
+        2. 数字和字符串比较, 字符串转换为数字后再比较
+        3. 字符串和字符串比较, 进行字符的ASCII码值比较
+    */
+   var num1 = '23';
+   var num2 = 34;
+   console.log(num1 < num2);
+
+   var str1 = 7;
+   var str2 = 'b';//98
+   console.log(str1 > str2);
+```
+
 ##### 运算符--赋值运算符
 
 ------
@@ -741,9 +793,6 @@ num++;num--
                     后置：返回加之前的值；
     
     */
-
-
-
     var m = 1;
     var res = m++ + ++m + m + m-- + m + m++;
     //   m  = 2      3    3   2     2   3  自身
